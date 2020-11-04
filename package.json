@@ -1,0 +1,33 @@
+{
+  "name": "tutordot_web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HardBird/TutorDot_Web.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "next": "^10.0.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "yarn": "^1.22.10"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "description": "",
+  "bugs": {
+    "url": "https://github.com/HardBird/TutorDot_Web/issues"
+  },
+  "homepage": "https://github.com/HardBird/TutorDot_Web#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.6",
+    "@types/react": "^16.9.55",
+    "typescript": "^4.0.5"
+  },
+  "author": "",
+  "keywords": []
+}
