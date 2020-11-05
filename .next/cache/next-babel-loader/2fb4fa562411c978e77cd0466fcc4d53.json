@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const ENDPOINT = `http://15.165.186.228:3000`;","map":{"version":3,"sources":["/Users/gangbyeongheon/Desktop/tutordot/TutorDot_Web/src/api/config/config.tsx"],"names":["ENDPOINT"],"mappings":"AAAA,OAAO,MAAMA,QAAQ,GAAI,4BAAlB","sourcesContent":["export const ENDPOINT = `http://15.165.186.228:3000`\n"]},"metadata":{},"sourceType":"module"}

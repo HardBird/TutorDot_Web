@@ -5,7 +5,9 @@ import CustomLabel from '../custom/CustomLabel'
 import CustomButton from '../custom/CustomButton'
 import { loginForm } from '../types/index'
 import { publicStyles } from '../types/publicStyles'
-
+import LoginContext from "../context/LoginContext"
+import API_LOGIN from "../api/Account/AccountLogin";
+import axios from 'axios'
 const InputLogin = styled.input(() => ({
     /*  boxShadow: '2px 3px 2px 0px #00000029', */
     width: '372px',
@@ -13,7 +15,8 @@ const InputLogin = styled.input(() => ({
     height: 54,
     border: 0,
     padding: '0 20px',
-    fontSize: 16
+    fontSize: 16,
+    background: '#F0F0F0'
 }))
 const PInput = styled.p(() => ({
     padding: 0,
@@ -30,6 +33,7 @@ const LoginContainer: React.FunctionComponent = () => {
         email: '',
         password: ''
     });
+    const loginContext = React.useContext(LoginContext);
 
     const Header = () => (
         <div>
@@ -93,7 +97,28 @@ const LoginContainer: React.FunctionComponent = () => {
     }
 
     const login = async () => {
-
+        try {
+            const error = await userValidationCheck()
+            if (error) {
+                alert('아이디나 비밀번호를 입력해주세요')
+            }
+            const response = await API_LOGIN(logins)
+            //@ts-ignore
+            const data: any = response.data
+            console.log('@res : ', data)
+            //@ts-ignore
+            if (response.status === 200) {
+                if (data.status === 200) {
+                    alert('로그인 성공')
+                    // Cookies.set('usertoken', data.data.token)
+                    // Cookies.set('useremail', logins.email)
+                }
+            } else {
+                alert('로그인이 실패하였습니다.')
+            }
+        } catch (error) {
+            alert('서버 에러')
+        }
     }
 
     return (

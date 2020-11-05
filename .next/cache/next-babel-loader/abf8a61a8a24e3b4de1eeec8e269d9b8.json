@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nimport React from 'react';\nimport LoginContainer from '../../src/components/LoginComponent';\n\nvar Login = function Login() {\n  return /*#__PURE__*/_jsx(LoginContainer, {\n    type: 'login'\n  });\n};\n\nexport default Login;","map":null,"metadata":{},"sourceType":"module"}

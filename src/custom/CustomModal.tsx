@@ -6,7 +6,7 @@ interface Props {
     type: 'login'
 }
 const Container = styled.div`
-background: rgba(255, 255, 255, .5);
+background: white;
 border-radius: 8pt;
 opacity: 1;
 backdrop-filter: blur(23pt);

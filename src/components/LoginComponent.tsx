@@ -10,14 +10,12 @@ import Cookies from 'js-cookie'
 
 const Container = styled.div`
     width: 100%;
-    height: 100vh;
-    // background: transparent url('/images/landingBackground.png') no-repeat 0% 0%;
+    height: 100%;
     background-color: #6875dd;
-    background-size: 100% 100%;
 `
 
 const BlackOpacity = styled.div`
-  width: 100%;
+  width: 1500;
   height: 100vh;
   background-color: #6875dd;
   /* padding: 21pt; */
@@ -50,7 +48,7 @@ const LoginComponent: React.FunctionComponent<Props> = ({ type }) => {
     }, [])
     const Header = () => (
         <HeaderContainer>
-            {type == 'index' && <CustomButton background={false} text={'시작하기'} onClick={isLogin} fontColor={'white'} fontSize={10} />}
+            {type == 'index' && <CustomButton text={'시작하기'} onClick={isLogin} fontColor={'white'} fontSize={10} style={{ background: '#A2AAEA' }} />}
         </HeaderContainer>
     )
 
@@ -59,11 +57,13 @@ const LoginComponent: React.FunctionComponent<Props> = ({ type }) => {
             ...publicStyles.startCenter,
             height: '100%',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+
+
         }}>
             {
                 type == 'index' ?
-                    <div style={{ textAlign: 'center', marginTop: -400 }}>
+                    <div style={{ textAlign: 'center', marginTop: -200 }}>
                         <img src={'/images/logo.png'} alt='logo' style={logoImage} />
                         <div style={{ marginTop: -250 }}>
                             <CustomLabel text={'과외 관리의 마침표'} fontSize={23} fontWeight={'bold'} fontType={'pt'} color={PRIVATE_WHITE_COLOR} />
@@ -75,11 +75,11 @@ const LoginComponent: React.FunctionComponent<Props> = ({ type }) => {
         </div>
     )
 
-    return <Container>
+    return (<div style={{ minWidth: 1500 }}><Container>
         <BlackOpacity>
             {Header()}
             {Content()}
         </BlackOpacity>
-    </Container>
+    </Container></div>)
 }
 export default LoginComponent
